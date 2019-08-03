@@ -12,6 +12,6 @@ object MainClass {
     val ss = SparkSession.builder().master("local[*]").appName("name").getOrCreate()
     val sc = ss.sparkContext
 
-    sc.makeRdd(List(1,2,3,4,5)).map(x => (x*2)).collect().foreach(println) 
+    sc.makeRDD(List(1,2,3,4,5)).map(x => (x*2)).collect().foreach(println) 
   }
 }
