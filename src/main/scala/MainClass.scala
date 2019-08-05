@@ -5,14 +5,11 @@ object MainClass {
 
     println("demo for jenkins")
 
-//    for(i <- 0 to 5) {
-//       println(i)
-//    }
-  
-    val ss = SparkSession.builder().master("local[*]").appName("name").getOrCreate()
-    val sc = ss.sparkContext
+    val sparkSession = SparkSession.builder().appName("kdsbh").master("local[*]").getOrCreate()
 
-    val x = sc.makeRDD(List(1,2,3,4,5)) 
-    x.map(x => (x*2)).collect().foreach(println)
+    val sparkContext = sparkSession.sparkContext
+
+
+    sparkContext.makeRDD(List(1,2,3,4,5,6,7,8,9,10)).map(x => (x*2)).collect().foreach(println)
   }
 }
