@@ -6,7 +6,7 @@ object MainClass {
     println("demo for jenkins")
 
     val sparkSession = SparkSession.builder().appName("kdsbh").master("local[*]").getOrCreate()
-    sparkSession.conf.set("spark.executor.memory", "471859200")
+    sparkSession.conf.set("spark.executor.memory", "2g")
     val sparkContext = sparkSession.sparkContext
 
 
